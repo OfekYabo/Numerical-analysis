@@ -21,11 +21,14 @@ common_ns = [10, 20, 50, 100]
 fallback_ns = [n-1 for n in common_ns]
 all_ns = sorted(common_ns + fallback_ns)
 
-print("        self.cache = {")
-for n in all_ns:
-    z, w = get_cheb_canonical(n)
-    z_str = np.array2string(z, separator=',', precision=16, max_line_width=1000).replace('\n', '')
-    w_str = np.array2string(w, separator=',', precision=16, max_line_width=1000).replace('\n', '')
-    
-    print(f"            {n}: (np.array({z_str}), np.array({w_str})),")
-print("        }")
+with open("constants_out.txt", "w") as f:
+    f.write("        self.cache = {\n")
+    for n in all_ns:
+        z, w = get_cheb_canonical(n)
+        
+        # Use str(list()) for safer serialization
+        z_str = str(list(z))
+        w_str = str(list(w))
+        
+        f.write(f"            {n}: (np.array({z_str}), np.array({w_str})),\n")
+    f.write("        }\n")
