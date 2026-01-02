@@ -125,6 +125,25 @@ class Assignment1:
             for i in range(used_n):
                 y_values[i] = f(nodes[i])
 
+        # --- Adaptive Log-Interpolation Check ---
+        # Heuristic: If values are strictly positive and cover a huge dynamic range,
+        # interpolating in Log-space might be much more accurate (e.g. exp(x), exp(exp(x))).
+        # We only apply this if the ratio max/min is large enough to justify the overhead.
+        
+        use_log = False
+        try:
+            min_y = np.min(y_values)
+            max_y = np.max(y_values)
+            
+            if min_y > 1e-30:  # Strictly positive (avoid log(0) or instability near 0)
+                ratio = max_y / min_y
+                if ratio > 1000:  # Threshold for "Exponential-like" behavior
+                    y_values = np.log(y_values)
+                    use_log = True
+        except:
+            pass # Safety fallback
+        # ----------------------------------------
+
         self.nodes = nodes
         self.y_values = y_values
         self.weights = weights
@@ -132,32 +151,23 @@ class Assignment1:
         def result(x):
             # Barycentric Interpolation Evaluation Formula (2nd form)
             # P(x) = sum(w_j * y_j / (x - x_j)) / sum(w_j / (x - x_j))
-            # 
-            # 1. diff = (x - x_j): Vector of distances from x to each node.
+            
             diff = x - nodes
             
-            # 2. Check mask: If x is very close to a node, diff is near 0.
-            #    We must return the exact known value y_j to avoid division by zero.
             close_mask = np.abs(diff) < 1e-14
             if np.any(close_mask):
-                return y_values[np.argmax(close_mask)]
+                val = y_values[np.argmax(close_mask)]
+                return np.exp(val) if use_log else val
             
-            # 3. t = w_j / (x - x_j): The individual terms of the summation.
             t = weights / diff
-            
-            # 4. numerator = sum(t * y_j)
             numerator = np.dot(t, y_values)
-            
-            # 5. denominator = sum(t)
             denominator = np.sum(t)
             
-            # 6. Result is Num/Denom
-            #    Rare edge case: if denominator is 0 (outside support), generally implies
-            #    numerical issues or x extremely far out, but 0 is a safe fallback.
             if denominator == 0:
                 return 0 
-                
-            return numerator / denominator
+            
+            res = numerator / denominator
+            return np.exp(res) if use_log else res
 
         return result
 
