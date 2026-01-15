@@ -162,9 +162,9 @@ class Assignment3:
             except Exception:
                 return 1e9
 
-        # Heuristic search range widened to [-100, 100]
+        # Requirement: Ignore intersection points outside range x in [1, 100]
         # Pass 'difference' as f1 and 'zero' as f2
-        roots = ass2.intersections(difference, lambda x: 0, -100, 100, maxerr=0.001)
+        roots = ass2.intersections(difference, lambda x: 0, 1, 100, maxerr=0.001)
         
         if len(roots) < 2:
             return np.float32(np.nan)
