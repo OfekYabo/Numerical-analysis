@@ -93,10 +93,15 @@ class Assignment2:
             # Check for sign change
             if y_prev * y_curr <= 0:
                 # Root found in [x_prev, current_x]. Refine it.
+                # print(f"DEBUG: Calling find_root with f({x_prev})={y_prev}, f({current_x})={y_curr}")
                 root = self._find_root(f, x_prev, current_x, maxerr)
                 
                 # Check if a valid root was found
                 if root is not None:
+                    # try:
+                    #     float(root)
+                    # except Exception as e:
+                    #     print(f"DEBUG: Root {root} is not float! {e}")
                     roots.append(root)
 
             # Advance

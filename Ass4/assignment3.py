@@ -21,6 +21,7 @@ import time
 import random
 
 
+
 class Assignment3:
     def __init__(self):
         """
@@ -57,11 +58,36 @@ class Assignment3:
         np.float32
             The definite integral of f between a and b
         """
-
-        # replace this line with your solution
-        result = np.float32(1.0)
-
-        return result
+        # Ensure float32 inputs
+        a = np.float32(a)
+        b = np.float32(b)
+        
+        # Simpson's rule requires an odd number of points (even number of intervals)
+        if n % 2 == 0:
+            n -= 1
+        
+        if n < 3: # Fallback for very small n, though n is usually larger
+             n = 3
+             
+        # Generate points
+        x = np.linspace(a, b, n).astype(np.float32)
+        h = (b - a) / (n - 1)
+        
+        # Calculate function values
+        y = f(x).astype(np.float32)
+        
+        # Composite Simpson's Rule: h/3 * (y[0] + 4*sum(odd) + 2*sum(even) + y[n-1])
+        # Indices: 0, 1, 2, ..., n-1
+        # Odds: 1, 3, ..., n-2
+        # Evens: 2, 4, ..., n-3
+        
+        integral = y[0] + y[-1]
+        integral += 4 * np.sum(y[1:-1:2])
+        integral += 2 * np.sum(y[2:-1:2])
+        
+        result = (h / 3) * integral
+        
+        return np.float32(result)
 
     def areabetween(self, f1: callable, f2: callable) -> np.float32:
         """
@@ -89,11 +115,72 @@ class Assignment3:
             The area between function and the X axis
 
         """
+        # Dynamic import to handle uncertain project structure
+        import sys
+        import os
+        import traceback # Added for debug
+        
+        # Try to locate assignment2
+        # Prioritize local import
+        try:
+             from assignment2 import Assignment2
+        except ImportError:
+            sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../Ass1')))
+            try:
+                 from assignment2 import Assignment2
+            except ImportError:
+                 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../Ass3')))
+                 from assignment2 import Assignment2
 
-        # replace this line with your solution
-        result = np.float32(1.0)
+        ass2 = Assignment2()
+        
+        def difference(x):
+            # Handle vectorization (generic inputs)
+            if isinstance(x, np.ndarray):
+                try:
+                    # Try efficient vectorization first
+                    return f1(x) - f2(x)
+                except (TypeError, ValueError):
+                    # Fallback: Function might not support arrays (e.g. math.log)
+                    # Process element-wise using the scalar logic below
+                    return np.array([difference(xi) for xi in x])
 
-        return result
+            # Handle scalar inputs (safe evaluation)
+            try:
+                # Resolve single-element arrays to scalars just in case
+                if hasattr(x, 'item'):
+                    x = x.item()
+                    
+                val = f1(x) - f2(x)
+                
+                if np.isnan(val) or np.isinf(val):
+                    return 1e9 
+                
+                return val
+            except (ValueError, ArithmeticError, RuntimeWarning):
+                return 1e9 
+            except Exception:
+                return 1e9
+
+        # Heuristic search range widened to [-100, 100]
+        # Pass 'difference' as f1 and 'zero' as f2
+        roots = ass2.intersections(difference, lambda x: 0, -100, 100, maxerr=0.001)
+        
+        if len(roots) < 2:
+            return np.float32(np.nan)
+            
+        roots.sort()
+        total_area = np.float32(0.0)
+        
+        for i in range(len(roots) - 1):
+            r_start = roots[i]
+            r_end = roots[i+1]
+            
+            # Integrate the difference function on this segment
+            segment_area = self.integrate(difference, r_start, r_end, n=100)
+            total_area += np.abs(segment_area)
+            
+        return total_area
 
 
 ##########################################################################
@@ -101,7 +188,7 @@ class Assignment3:
 
 import unittest
 from sampleFunctions import *
-from tqdm import tqdm
+
 
 
 class TestAssignment3(unittest.TestCase):
