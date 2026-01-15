@@ -59,6 +59,35 @@ class Assignment2:
             else:
                 r_low = r_best
         
+        return r_best if abs(f(r_best)) < maxerr else None
+
+    def _newton_only(self, f: callable, x0: float, maxerr: float) -> float:
+        """
+        Attempts to find a root starting at x0 using pure Newton-Raphson.
+        Used for touching roots where signs don't change.
+        """
+        MAX_ITER = 20
+        MIN_DERIVATIVE = 1e-9
+        DERIVATIVE_H = 1e-5
+
+        def df(x):
+            return (f(x + DERIVATIVE_H) - f(x - DERIVATIVE_H)) / (2 * DERIVATIVE_H)
+            
+        current_x = x0
+        
+        for _ in range(MAX_ITER):
+            f_val = f(current_x)
+            if abs(f_val) < maxerr:
+                return current_x
+                
+            try:
+                d_val = df(current_x)
+                if abs(d_val) < MIN_DERIVATIVE:
+                    return None
+                current_x = current_x - f_val / d_val
+            except Exception:
+                return None
+                
         return None
 
     def intersections(self, f1: callable, f2: callable, a: float, b: float, maxerr=0.001) -> Iterable:
@@ -66,51 +95,95 @@ class Assignment2:
         Find as many intersection points as you can. 
         """
         # Constants
-        N_STEPS = 1000
-        SCAN_BUFFER_FACTOR = 10.0
-
+        N_STEPS = 2000 # Increased for better resolution of close roots
+        
         # Define the difference function
         def f(x):
             return f1(x) - f2(x)
 
         roots = []
         
-        # Optimization: Use a finer grid to catch closely spaced roots.
+        # Optimization: Attempt Vectorized Scan first
         step = (b - a) / N_STEPS
         
-        if step < maxerr:
-            step = maxerr 
-
-        # Pre-calculate first point
-        x_prev = a
-        y_prev = f(a)
-        
-        # Scan range
-        current_x = x_prev + step
-        while current_x <= b + step/SCAN_BUFFER_FACTOR: 
-            y_curr = f(current_x)
+        try:
+            # 1. Generate Grid
+            X = np.linspace(a, b, N_STEPS + 1)
             
-            # Check for sign change
-            if y_prev * y_curr <= 0:
-                # Root found in [x_prev, current_x]. Refine it.
-                root = self._find_root(f, x_prev, current_x, maxerr)
-                
-                # Check if a valid root was found
+            # 2. Vectorized Evaluation (Fast)
+            Y = f1(X) - f2(X)
+            
+            # 3. Find Sign Changes (Crossing Roots)
+            # sign(Y) returns -1, 0, 1. diff checks adjacent changes.
+            # We look for indices where sign changes.
+            sign_changes = np.where(np.diff(np.sign(Y)))[0]
+            
+            for idx in sign_changes:
+                x_start = X[idx]
+                x_end = X[idx+1]
+                root = self._find_root(f, x_start, x_end, maxerr)
+                if root is not None:
+                    roots.append(root)
+                    
+            # 4. Find Touching Roots (Local Extrema near zero)
+            # Look for points where value is small AND it's a local extremum
+            # Logic: |Y| < small_tol AND derivative changes sign (or just local min of |Y|)
+            # Simple heuristic: Look for indices where |Y| is exceptionally small
+            
+            # Filter for small values only to save time
+            small_val_indices = np.where(np.abs(Y) < maxerr)[0]
+            
+            # For each small value, check if it was already found or is a touching root
+            # Just feeding these candidates to _newton_only is safe and fast
+            for idx in small_val_indices:
+                root = self._newton_only(f, X[idx], maxerr)
                 if root is not None:
                     roots.append(root)
 
-            # Advance
-            x_prev = current_x
-            y_prev = y_curr
-            current_x += step
+        except (TypeError, ValueError):
+            # Fallback to Scalar Loop if f1/f2 don't support vectorization
+            # (e.g. math.sin, if conditions inside lambda)
+            x_prev_1 = a
+            y_prev_1 = f(a)
+            x_prev_2 = None
+            y_prev_2 = None
+            current_x = a + step
+            
+            while current_x <= b + step*0.1:
+                y_curr = f(current_x)
+                
+                # Sign Change
+                if y_prev_1 * y_curr <= 0:
+                    root = self._find_root(f, x_prev_1, current_x, maxerr)
+                    if root is not None: roots.append(root)
+                
+                # Touching Root (Extremum)
+                elif x_prev_2 is not None:
+                    slope1 = y_prev_1 - y_prev_2
+                    slope2 = y_curr - y_prev_1
+                    if slope1 * slope2 < 0 and abs(y_prev_1) < maxerr * 10:
+                        root = self._newton_only(f, x_prev_1, maxerr)
+                        if root is not None: roots.append(root)
 
-        # Filter duplicates
+                x_prev_2 = x_prev_1
+                y_prev_2 = y_prev_1
+                x_prev_1 = current_x
+                y_prev_1 = y_curr
+                current_x += step
+
+        # Filter duplicates and valid range
+
         if not roots: return []
         
         roots.sort()
         unique_roots = []
-        unique_roots.append(roots[0])
-        for r in roots[1:]:
+        
+        # Ensure roots are within [a, b] (Newton might step slightly out)
+        valid_roots = [r for r in roots if a - maxerr <= r <= b + maxerr]
+        if not valid_roots: return []
+        
+        unique_roots.append(valid_roots[0])
+        for r in valid_roots[1:]:
             if abs(r - unique_roots[-1]) > maxerr:
                 unique_roots.append(r)
                 
@@ -122,7 +195,7 @@ class Assignment2:
 
 import unittest
 from sampleFunctions import *
-# from tqdm import tqdm
+
 
 
 class TestAssignment2(unittest.TestCase):
