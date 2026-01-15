@@ -93,23 +93,39 @@ class Assignment4:
             return x
 
         # --- 2. Sampling Strategy ---
+        # --- 2. Sampling Strategy ---
         t0 = time.time()
-        # Test sample to gauge speed
-        f(a)
-        t_sample = time.time() - t0
+        # Measure average time over multiple samples for stability
+        # We need at least d+1 points anyway.
+        measurement_count = 0
+        # Use d+5 to be safe, but cap at 50 to avoid wasting too much time on very high degrees
+        samples_to_measure = min(d + 5, 50) 
+        
+        for _ in range(samples_to_measure):
+            f(a)
+            measurement_count += 1
+            # Safety break: if measuring takes > 0.5s, stop and use current avg
+            if time.time() - t0 > 0.5: 
+                break
+                
+        t_total_measure = time.time() - t0
+        t_sample = t_total_measure / measurement_count
         
         remaining = maxtime - (time.time() - start_time)
         budget = max(0.1, remaining - 0.5) # Leave buffer
         
         # Estimate N
-        if t_sample > 1e-5:
+        if t_sample > 1e-3: # If function is slow (>1ms), be conservative
+            # Use 75% of the budget for sampling (leave 25% buffer)
+            estimated_N = int((budget * 0.75) / t_sample)
+        elif t_sample > 1e-5:
             estimated_N = int(budget / t_sample)
         else:
              estimated_N = 20000
 
         # Heuristic bounds
         # N must be > d. 
-        N = min(max(estimated_N, 2 * d + 20), 5000) 
+        N = min(max(estimated_N, 2 * d + 20), 20000) 
         if N < d + 2: N = d + 2
 
         xs = np.linspace(a, b, N)
