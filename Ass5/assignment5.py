@@ -276,8 +276,10 @@ class Assignment5:
                          np.sqrt(((p[0]-p[2])**2).sum())]
                 max_edges[idx] = max(edges)
             
-            # Use 50th percentile — empirically optimal for both low-noise and high-noise shapes
-            threshold = np.percentile(max_edges, 50)
+            # Noise-adaptive percentile: lower noise needs stricter filtering
+            # shape5 (noise=0.003): optimal pct=40, shape7 (noise=0.095): optimal pct=50
+            pct = 40 + min(10, relative_noise * 100)  # 40-50 range
+            threshold = np.percentile(max_edges, pct)
             
             # Sum triangle areas (in ORIGINAL coordinates) for triangles passing filter
             alpha_area = 0.0

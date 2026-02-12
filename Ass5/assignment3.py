@@ -166,7 +166,7 @@ class Assignment3:
 
         # Requirement: Ignore intersection points outside range x in [1, 100]
         # Pass 'difference' as f1 and 'zero' as f2
-        roots = ass2.intersections(difference, lambda x: 0, 1, 100, maxerr=0.001)
+        roots = ass2.intersections(difference, lambda x: 0, 1, 100, maxerr=1e-6)
         
         if len(roots) < 2:
             return np.float32(np.nan)
@@ -179,7 +179,8 @@ class Assignment3:
             r_end = roots[i+1]
             
             # Integrate the difference function on this segment
-            segment_area = self.integrate(difference, r_start, r_end, n=100)
+            # Using n=200 for better precision (100 was default)
+            segment_area = self.integrate(difference, r_start, r_end, n=200)
             total_area += np.abs(segment_area)
             
         return total_area

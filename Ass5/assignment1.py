@@ -125,23 +125,54 @@ class Assignment1:
                     y_values[i] = 0.0
 
         # --- Adaptive Log-Interpolation Check ---
-        # Heuristic: If values are strictly positive and cover a huge dynamic range,
-        # interpolating in Log-space might be much more accurate (e.g. exp(x), exp(exp(x))).
-        # We only apply this if the ratio max/min is large enough to justify the overhead.
+        # Strategy: 
+        # 1. Fast Filter: Check min/max ratio. If small (<50), it's definitely not exponential.
+        # 2. Robust Check: If ratio is high, compare spectral decay (smoothness) in Linear vs Log space.
         
         use_log = False
         try:
             min_y = np.min(y_values)
             max_y = np.max(y_values)
             
-            if min_y > 1e-30:  # Strictly positive (avoid log(0) or instability near 0)
-                ratio = max_y / min_y
-                if ratio > 1000:  # Threshold for "Exponential-like" behavior
-                    y_values = np.log(y_values)
+            if min_y > 1e-14 and (max_y / min_y) > 50:
+                # Ratio is high -> Candidates for log-space.
+                # Use Chebyshev spectral analysis to decide robustly.
+                
+                vals_log = np.log(y_values)
+                
+                def get_tail_energy(vals):
+                    # Compute Chebyshev coefficients using vectorized DCT-I
+                    N = len(vals) - 1
+                    if N < 2: return 1.0
+                    
+                    idx = np.arange(len(vals))
+                    j = idx.reshape(1, -1)
+                    k = idx.reshape(-1, 1)
+                    
+                    # Weights for trapezoidal sum
+                    weights = np.ones(len(vals))
+                    weights[0] = 0.5
+                    weights[-1] = 0.5
+                    
+                    M = np.cos(np.pi * j * k / N)
+                    coeffs = np.abs((2.0 / N) * np.dot(M, vals * weights))
+                    
+                    coeffs[0] *= 0.5
+                    coeffs[-1] *= 0.5
+                    
+                    total = np.sum(coeffs) + 1e-15
+                    tail = np.sum(coeffs[len(coeffs)//2:])
+                    return tail / total
+
+                e_lin = get_tail_energy(y_values)
+                e_log = get_tail_energy(vals_log)
+                
+                # If log-space is significantly smoother, use it
+                if e_log < e_lin:
+                    y_values = vals_log
                     use_log = True
         except:
             pass # Safety fallback
-        # ----------------------------------------
 
         self.nodes = nodes
         self.y_values = y_values
