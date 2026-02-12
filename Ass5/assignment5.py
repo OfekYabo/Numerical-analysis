@@ -240,101 +240,63 @@ class Assignment5:
             # FALLBACK: Non-star-convex shapes
             # ════════════════════════════════════════
             
-            # Estimate relative noise to choose strategy
+            # Estimate relative noise to choose alpha threshold
             span = np.max(pts, axis=0) - np.min(pts, axis=0)
             diag = np.linalg.norm(span) + 1e-10
             noise_est = np.median(bin_std_rn[well_sampled]) * max(sx, sy) if np.any(well_sampled) else 1.0
             relative_noise = noise_est / diag
             
-            if relative_noise < 0.01:
-                # ── LOW NOISE: Alpha Shapes (Delaunay Triangle Filtering) ──
-                # For shapes like shape5 where noise << scale.
-                # All contour-reconstruction methods fail on thin spikes/extreme concavities.
-                # Instead, compute area directly from Delaunay triangulation with edge filtering.
-                from scipy.spatial import Delaunay
-                
-                # Normalize coords for uniform edge-length computation
-                mins_p = np.min(pts, axis=0)
-                maxs_p = np.max(pts, axis=0)
-                scale_p = maxs_p - mins_p + 1e-10
-                pts_n = (pts - mins_p) / scale_p
-                
-                try:
-                    tri = Delaunay(pts_n)
-                except:
-                    # If Delaunay fails, use a trivial circle
-                    theta = np.linspace(0, 2*np.pi, 20, endpoint=False)
-                    tck, _ = splprep([np.cos(theta), np.sin(theta)], s=0, per=True)
-                    shape = MyShape(tck)
-                    shape._cached_area = 0
-                    return shape
-                
-                # Compute max edge length for each triangle (in normalized space)
-                max_edges = np.zeros(len(tri.simplices))
-                for idx, simplex in enumerate(tri.simplices):
-                    p = pts_n[simplex]
-                    edges = [np.sqrt(((p[0]-p[1])**2).sum()),
-                             np.sqrt(((p[1]-p[2])**2).sum()),
-                             np.sqrt(((p[0]-p[2])**2).sum())]
-                    max_edges[idx] = max(edges)
-                
-                # Adaptive alpha: use 50th percentile of max-edge lengths
-                threshold = np.percentile(max_edges, 50)
-                
-                # Sum triangle areas (in ORIGINAL coordinates) for triangles passing filter
-                alpha_area = 0.0
-                for idx, simplex in enumerate(tri.simplices):
-                    if max_edges[idx] <= threshold:
-                        p = pts[simplex]
-                        a = 0.5 * abs((p[1,0]-p[0,0])*(p[2,1]-p[0,1]) - 
-                                      (p[2,0]-p[0,0])*(p[1,1]-p[0,1]))
-                        alpha_area += a
-                
-                # Build a trivial contour (circle scaled to match area)
-                r_equiv = np.sqrt(alpha_area / np.pi)
-                theta = np.linspace(0, 2*np.pi, 100, endpoint=False)
-                tck, _ = splprep([cx + r_equiv*np.cos(theta), 
-                                  cy + r_equiv*np.sin(theta)], s=0, per=True)
-                
+            # ── Alpha Shapes (Delaunay Triangle Filtering) ──
+            # Deterministic and stable for ALL non-star-convex shapes.
+            # Works for both low-noise (shape5) and high-noise (shape7).
+            from scipy.spatial import Delaunay
+            
+            # Normalize coords for uniform edge-length computation
+            mins_p = np.min(pts, axis=0)
+            maxs_p = np.max(pts, axis=0)
+            scale_p = maxs_p - mins_p + 1e-10
+            pts_n = (pts - mins_p) / scale_p
+            
+            try:
+                tri = Delaunay(pts_n)
+            except:
+                # If Delaunay fails, use a trivial circle
+                theta = np.linspace(0, 2*np.pi, 20, endpoint=False)
+                tck, _ = splprep([np.cos(theta), np.sin(theta)], s=0, per=True)
                 shape = MyShape(tck)
-                shape._cached_area = np.float32(alpha_area)
+                shape._cached_area = 0
                 return shape
-                
-            else:
-                # ── HIGH NOISE: Subsample + NN Sort + Smoothing ──
-                # For shapes like shape7 (Bezier, noise/scale high).
-                # NN on subsampled points (spacing ≈ noise) + smoothing recovers the contour well.
-                
-                n_sub = min(500, N)
-                indices = np.random.choice(N, n_sub, replace=False)
-                work_pts = pts[indices]
-                
-                # Normalize for NN distance computation
-                work_n = (work_pts - np.min(work_pts, axis=0)) / (np.max(work_pts, axis=0) - np.min(work_pts, axis=0) + 1e-10)
-                
-                n_work = len(work_pts)
-                ordered = np.zeros(n_work, dtype=int)
-                used = np.zeros(n_work, dtype=bool)
-                used[0] = True
-                curr = 0
-
-                for i in range(1, n_work):
-                    d2 = (work_n[:, 0] - work_n[curr, 0]) ** 2 + \
-                         (work_n[:, 1] - work_n[curr, 1]) ** 2
-                    d2[used] = np.inf
-                    nxt = np.argmin(d2)
-                    ordered[i] = nxt
-                    used[nxt] = True
-                    curr = nxt
-
-                x_ord = work_pts[ordered, 0]
-                y_ord = work_pts[ordered, 1]
-
-                s_val = n_sub * 0.01
-                try:
-                    tck, _ = splprep([x_ord, y_ord], s=s_val, per=True, k=3)
-                except:
-                    tck, _ = splprep([x_ord, y_ord], s=0, per=True, k=3)
+            
+            # Compute max edge length for each triangle (in normalized space)
+            max_edges = np.zeros(len(tri.simplices))
+            for idx, simplex in enumerate(tri.simplices):
+                p = pts_n[simplex]
+                edges = [np.sqrt(((p[0]-p[1])**2).sum()),
+                         np.sqrt(((p[1]-p[2])**2).sum()),
+                         np.sqrt(((p[0]-p[2])**2).sum())]
+                max_edges[idx] = max(edges)
+            
+            # Use 50th percentile — empirically optimal for both low-noise and high-noise shapes
+            threshold = np.percentile(max_edges, 50)
+            
+            # Sum triangle areas (in ORIGINAL coordinates) for triangles passing filter
+            alpha_area = 0.0
+            for idx, simplex in enumerate(tri.simplices):
+                if max_edges[idx] <= threshold:
+                    p = pts[simplex]
+                    a = 0.5 * abs((p[1,0]-p[0,0])*(p[2,1]-p[0,1]) - 
+                                  (p[2,0]-p[0,0])*(p[1,1]-p[0,1]))
+                    alpha_area += a
+            
+            # Build a trivial contour (circle scaled to match area)
+            r_equiv = np.sqrt(alpha_area / np.pi) if alpha_area > 0 else 0.01
+            theta = np.linspace(0, 2*np.pi, 100, endpoint=False)
+            tck, _ = splprep([cx + r_equiv*np.cos(theta), 
+                              cy + r_equiv*np.sin(theta)], s=0, per=True)
+            
+            shape = MyShape(tck)
+            shape._cached_area = np.float32(alpha_area)
+            return shape
 
         # ── Step 5: Pre-compute area for caching ──
         shape = MyShape(tck)

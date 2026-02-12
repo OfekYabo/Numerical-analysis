@@ -73,14 +73,16 @@ class Assignment3:
         x = np.linspace(a, b, n).astype(np.float32)
         h = (b - a) / (n - 1)
         
-        # Calculate function values
-        y = f(x).astype(np.float32)
+        # Calculate function values — handle both vectorized and scalar-only functions
+        try:
+            y = np.asarray(f(x), dtype=np.float32)
+            if y.shape != x.shape:
+                raise ValueError("Shape mismatch")
+        except (TypeError, ValueError):
+            # Function doesn't support array input — evaluate element-wise
+            y = np.array([float(f(xi)) for xi in x], dtype=np.float32)
         
         # Composite Simpson's Rule: h/3 * (y[0] + 4*sum(odd) + 2*sum(even) + y[n-1])
-        # Indices: 0, 1, 2, ..., n-1
-        # Odds: 1, 3, ..., n-2
-        # Evens: 2, 4, ..., n-3
-        
         integral = y[0] + y[-1]
         integral += 4 * np.sum(y[1:-1:2])
         integral += 2 * np.sum(y[2:-1:2])
