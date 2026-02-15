@@ -56,12 +56,14 @@ class Assignment5:
         """
         Adaptive Shoelace with Richardson Extrapolation for speed.
         Shoelace error is O(h^2), so Richardson gives O(h^4) convergence.
+        Uses relative error for robust convergence across all area scales.
         """
-        n = 50
+        n = 100
         MAX_N = 20000
 
         prev_area = None
         prev_extrap = None
+        iteration = 0
 
         while n <= MAX_N:
             points = np.array(contour(n), dtype=np.float64)
@@ -75,9 +77,13 @@ class Assignment5:
             if prev_area is not None:
                 # Richardson extrapolation: A_better = (4*A_2n - A_n) / 3
                 extrap = (4.0 * current_area - prev_area) / 3.0
+                iteration += 1
 
-                if prev_extrap is not None:
-                    if abs(extrap - prev_extrap) < maxerr:
+                if prev_extrap is not None and iteration >= 2:
+                    # Use relative error for scale-invariant convergence
+                    diff = abs(extrap - prev_extrap)
+                    scale = max(abs(extrap), 1e-10)
+                    if diff < maxerr and diff / scale < maxerr:
                         return np.float32(extrap)
 
                 prev_extrap = extrap

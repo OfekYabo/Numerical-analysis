@@ -79,7 +79,13 @@ class Assignment3:
             if y.shape != x.shape:
                 raise ValueError("Shape mismatch")
         except (TypeError, ValueError):
-            # Function doesn't support array input — evaluate element-wise
+            # The failed f(x) call consumed 1 of our n allowed invocations.
+            # Recompute with n-2 points (stays odd for Simpson's) so total = 1 + (n-2) = n-1 <= n.
+            n = n - 2
+            if n < 3:
+                n = 3
+            x = np.linspace(a, b, n).astype(np.float32)
+            h = (b - a) / (n - 1)
             y = np.array([float(f(xi)) for xi in x], dtype=np.float32)
         
         # Composite Simpson's Rule: h/3 * (y[0] + 4*sum(odd) + 2*sum(even) + y[n-1])

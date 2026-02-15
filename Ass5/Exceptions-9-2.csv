@@ -1,0 +1,183 @@
+StudentID,assignemtn,function,execnum,error,time,GRADEABLE
+209288588,Assignment 3 integrate,integrate,7,only length-1 arrays can be converted to Python scalars,0.005130291,FALSE
+209288588,Assignment 3 integrate,integrate,9,only length-1 arrays can be converted to Python scalars,0.006174564,FALSE
+209288588,Assignment 3 integrate,integrate,10,,0.006182909,FALSE
+325115996,Assignment 3 integrate,integrate,3,Exceeded the maximal number of invocations.,0.007644415,FALSE
+325115996,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.007426977,FALSE
+325115996,Assignment 3 integrate,integrate,11,Exceeded the maximal number of invocations.,0.006675959,FALSE
+325115996,Assignment 3 integrate,integrate,12,Exceeded the maximal number of invocations.,0.006833315,FALSE
+325115996,Assignment 3 integrate,integrate,13,Exceeded the maximal number of invocations.,0.00673604,FALSE
+325115996,Assignment 3 integrate,integrate,14,Exceeded the maximal number of invocations.,0.006780624,FALSE
+325115996,Assignment 3 integrate,integrate,15,Exceeded the maximal number of invocations.,0.006909132,FALSE
+325115996,Assignment 3 integrate,integrate,16,Exceeded the maximal number of invocations.,0.006522417,FALSE
+325115996,Assignment 3 integrate,integrate,17,Exceeded the maximal number of invocations.,0.007452726,FALSE
+325115996,Assignment 3 integrate,integrate,18,Exceeded the maximal number of invocations.,0.007354259,FALSE
+325115996,Assignment 3 integrate,integrate,19,Exceeded the maximal number of invocations.,0.00922513,FALSE
+324942564,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.008414984,FALSE
+324942564,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.006601095,FALSE
+209675552,Assignment 1,interpolate,12,,0.061403275,FALSE
+209675552,Assignment 1,interpolate,33,,0.108896494,FALSE
+209675552,Assignment 1,interpolate,34,,0.123792887,FALSE
+209675552,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.006668806,FALSE
+209675552,Assignment 3 integrate,integrate,10,,0.005951643,FALSE
+325305043,Assignment 3 integrate,integrate,10,,0.013196945,FALSE
+216025874,Assignment 3 integrate,integrate,10,,0.009654999,FALSE
+324301266,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.00637579,FALSE
+324301266,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.006103754,FALSE
+322985979,Assignment 3 integrate,integrate,10,,0.009685755,FALSE
+207352170,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.01442337,FALSE
+207352170,Assignment 3 integrate,integrate,1,object of type 'numpy.float32' has no len(),0.013428688,FALSE
+207352170,Assignment 3 areabetween,areabetween,1,'Assignment3' object has no attribute 'intersector',0.007249355,FALSE
+207352170,Assignment 3 areabetween,areabetween,2,'Assignment3' object has no attribute 'intersector',0.008928299,FALSE
+207352170,Assignment 3 areabetween,areabetween,3,'Assignment3' object has no attribute 'intersector',0.00770998,FALSE
+207352170,Assignment 3 areabetween,areabetween,4,'Assignment3' object has no attribute 'intersector',0.008000135,FALSE
+207352170,Assignment 3 areabetween,areabetween,5,'Assignment3' object has no attribute 'intersector',0.008744478,FALSE
+207352170,Assignment 3 areabetween,areabetween,6,'Assignment3' object has no attribute 'intersector',0.009099007,FALSE
+207352170,Assignment 3 areabetween,areabetween,7,'Assignment3' object has no attribute 'intersector',0.01236248,FALSE
+207352170,Assignment 3 areabetween,areabetween,8,'Assignment3' object has no attribute 'intersector',0.007424593,FALSE
+207352170,Assignment 3 areabetween,areabetween,9,'Assignment3' object has no attribute 'intersector',0.007659435,FALSE
+207352170,Assignment 3 areabetween,areabetween,10,'Assignment3' object has no attribute 'intersector',0.007333994,FALSE
+207352170,Assignment 3 areabetween,areabetween,11,'Assignment3' object has no attribute 'intersector',0.007285833,FALSE
+207352170,Assignment 3 areabetween,areabetween,12,'Assignment3' object has no attribute 'intersector',0.007065535,FALSE
+207352170,Assignment 3 areabetween,areabetween,13,'Assignment3' object has no attribute 'intersector',0.009972572,FALSE
+207352170,Assignment 3 areabetween,areabetween,14,'Assignment3' object has no attribute 'intersector',0.006940126,FALSE
+208907063,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.007558584,FALSE
+208907063,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.00776577,FALSE
+208907063,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.008970261,FALSE
+212434369,Assignment 3 integrate,integrate,10,,0.010974169,FALSE
+313351439,Assignment 3 integrate,integrate,10,,0.01038599,FALSE
+211774351,Assignment 3 integrate,integrate,10,,0.013473749,FALSE
+211774351,Assignment 3 areabetween,areabetween,1,'Assignment3' object has no attribute 'ass2',0.006860018,FALSE
+211774351,Assignment 3 areabetween,areabetween,2,'Assignment3' object has no attribute 'ass2',0.007713795,FALSE
+211774351,Assignment 3 areabetween,areabetween,3,'Assignment3' object has no attribute 'ass2',0.00610733,FALSE
+211774351,Assignment 3 areabetween,areabetween,4,'Assignment3' object has no attribute 'ass2',0.006204844,FALSE
+211774351,Assignment 3 areabetween,areabetween,5,'Assignment3' object has no attribute 'ass2',0.00637126,FALSE
+211774351,Assignment 3 areabetween,areabetween,6,'Assignment3' object has no attribute 'ass2',0.005918264,FALSE
+211774351,Assignment 3 areabetween,areabetween,7,'Assignment3' object has no attribute 'ass2',0.005644798,FALSE
+211774351,Assignment 3 areabetween,areabetween,8,'Assignment3' object has no attribute 'ass2',0.005672216,FALSE
+211774351,Assignment 3 areabetween,areabetween,9,'Assignment3' object has no attribute 'ass2',0.005633831,FALSE
+211774351,Assignment 3 areabetween,areabetween,10,'Assignment3' object has no attribute 'ass2',0.006229401,FALSE
+211774351,Assignment 3 areabetween,areabetween,11,'Assignment3' object has no attribute 'ass2',0.006167412,FALSE
+211774351,Assignment 3 areabetween,areabetween,12,'Assignment3' object has no attribute 'ass2',0.006297827,FALSE
+211774351,Assignment 3 areabetween,areabetween,13,'Assignment3' object has no attribute 'ass2',0.005892038,FALSE
+211774351,Assignment 3 areabetween,areabetween,14,'Assignment3' object has no attribute 'ass2',0.006098986,FALSE
+212358212,Assignment 3 integrate,integrate,10,,0.007738829,FALSE
+205967789,Assignment 1,ERROR,,No module named 'assignment1',ERROR,FALSE
+205967789,Assignment 2,ERROR,,No module named 'assignment2',ERROR,FALSE
+205967789,Assignment 3 integrate,ERROR,,No module named 'assignment3',ERROR,FALSE
+205967789,Assignment 3 areabetween,ERROR,,No module named 'assignment3',ERROR,FALSE
+205967789,Assignment 4,ERROR,,No module named 'assignment4',ERROR,FALSE
+205967789,Assignment 5 area,ERROR,,No module named 'assignment5',ERROR,FALSE
+205967789,Assignment 5 fit,ERROR,,No module named 'assignment5',ERROR,FALSE
+215670407,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.016355038,FALSE
+215670407,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.017371178,FALSE
+325842706,Assignment 3 areabetween,areabetween,4,,0.275551796,FALSE
+325842706,Assignment 3 areabetween,areabetween,6,,0.277390957,FALSE
+325842706,Assignment 3 areabetween,areabetween,8,,0.583587646,FALSE
+325842706,Assignment 3 areabetween,areabetween,12,,0.273221493,FALSE
+211965371,Assignment 3 integrate,integrate,10,,0.009902239,FALSE
+342728409,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.006635666,FALSE
+342728409,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.006394863,FALSE
+342728409,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.007150173,FALSE
+211909783,Assignment 3 integrate,integrate,1,Exceeded the maximal number of invocations.,0.011426449,FALSE
+211909783,Assignment 3 integrate,integrate,6,Exceeded the maximal number of invocations.,0.008628368,FALSE
+211909783,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.009321928,FALSE
+211909783,Assignment 3 integrate,integrate,8,Exceeded the maximal number of invocations.,0.010848999,FALSE
+211909783,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.013232946,FALSE
+211909783,Assignment 3 integrate,integrate,10,Exceeded the maximal number of invocations.,0.014767647,FALSE
+211909783,Assignment 3 integrate,integrate,11,Exceeded the maximal number of invocations.,0.016201496,FALSE
+211909783,Assignment 3 integrate,integrate,13,Exceeded the maximal number of invocations.,0.010196924,FALSE
+211909783,Assignment 3 integrate,integrate,14,Exceeded the maximal number of invocations.,0.012641191,FALSE
+211909783,Assignment 3 integrate,integrate,15,Exceeded the maximal number of invocations.,0.012188673,FALSE
+211909783,Assignment 3 integrate,integrate,17,Exceeded the maximal number of invocations.,0.010478258,FALSE
+211805049,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.007427931,FALSE
+211805049,Assignment 3 integrate,integrate,10,,0.006482124,FALSE
+325818839,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.006359816,FALSE
+,,,,,,
+,,,,,,
+,,,,,,
+211894852,Assignment 3 integrate,integrate,10,,0.008126259,FALSE
+213384266,Assignment 3 integrate,integrate,10,,0.013836145,FALSE
+214716656,Assignment 5 area,ERROR,,No module named 'assignment5',ERROR,FALSE
+214716656,Assignment 5 fit,ERROR,,No module named 'assignment5',ERROR,FALSE
+207434226,Assignment 3 integrate,integrate,10,,0.010362387,FALSE
+325678423,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.007074594,FALSE
+325678423,Assignment 3 integrate,integrate,10,,0.009568691,FALSE
+319047023,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.00692749,FALSE
+319047023,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.006679773,FALSE
+319047023,Assignment 3 integrate,integrate,10,,0.006467819,FALSE
+319047023,Assignment 3 areabetween,areabetween,1,only length-1 arrays can be converted to Python scalars,0.006360769,FALSE
+319047023,Assignment 3 areabetween,areabetween,2,only length-1 arrays can be converted to Python scalars,0.007001877,FALSE
+319047023,Assignment 3 areabetween,areabetween,3,only length-1 arrays can be converted to Python scalars,0.006617785,FALSE
+319047023,Assignment 3 areabetween,areabetween,8,only length-1 arrays can be converted to Python scalars,0.006850243,FALSE
+322404716,Assignment 3 integrate,integrate,10,,0.009525776,FALSE
+322404716,Assignment 3 areabetween,areabetween,1,'Assignment3' object has no attribute 'ass2',0.010433197,FALSE
+322404716,Assignment 3 areabetween,areabetween,2,'Assignment3' object has no attribute 'ass2',0.013517141,FALSE
+322404716,Assignment 3 areabetween,areabetween,3,'Assignment3' object has no attribute 'ass2',0.008227825,FALSE
+322404716,Assignment 3 areabetween,areabetween,4,'Assignment3' object has no attribute 'ass2',0.007251263,FALSE
+322404716,Assignment 3 areabetween,areabetween,5,'Assignment3' object has no attribute 'ass2',0.007552624,FALSE
+322404716,Assignment 3 areabetween,areabetween,6,'Assignment3' object has no attribute 'ass2',0.008139372,FALSE
+322404716,Assignment 3 areabetween,areabetween,7,'Assignment3' object has no attribute 'ass2',0.007609606,FALSE
+322404716,Assignment 3 areabetween,areabetween,8,'Assignment3' object has no attribute 'ass2',0.009031773,FALSE
+322404716,Assignment 3 areabetween,areabetween,9,'Assignment3' object has no attribute 'ass2',0.008800745,FALSE
+322404716,Assignment 3 areabetween,areabetween,10,'Assignment3' object has no attribute 'ass2',0.00795579,FALSE
+322404716,Assignment 3 areabetween,areabetween,11,'Assignment3' object has no attribute 'ass2',0.007627726,FALSE
+322404716,Assignment 3 areabetween,areabetween,12,'Assignment3' object has no attribute 'ass2',0.007474184,FALSE
+322404716,Assignment 3 areabetween,areabetween,13,'Assignment3' object has no attribute 'ass2',0.007373333,FALSE
+322404716,Assignment 3 areabetween,areabetween,14,'Assignment3' object has no attribute 'ass2',0.007760525,FALSE
+208004689,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.00496316,FALSE
+208004689,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.005955219,FALSE
+208004689,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.005455494,FALSE
+212133763,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.011638165,FALSE
+212133763,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.010780573,FALSE
+212133763,Assignment 5 area,ERROR,,No module named 'assignment5',ERROR,FALSE
+212133763,Assignment 5 fit,ERROR,,No module named 'assignment5',ERROR,FALSE
+329186779,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.007523775,FALSE
+329186779,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.007786989,FALSE
+329186779,Assignment 3 areabetween,areabetween,10,,0.008708,FALSE
+312261167,Assignment 3 areabetween,areabetween,1,math domain error,0.012666225,FALSE
+312261167,Assignment 3 areabetween,areabetween,2,math domain error,0.013083935,FALSE
+312261167,Assignment 3 areabetween,areabetween,3,math domain error,0.010860682,FALSE
+312261167,Assignment 3 areabetween,areabetween,8,math domain error,0.012820959,FALSE
+325708576,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.006505728,FALSE
+325708576,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.007168293,FALSE
+325708576,Assignment 3 integrate,integrate,10,,0.009702444,FALSE
+323063545,Assignment 3 areabetween,areabetween,2,,0.099697351,FALSE
+323063545,Assignment 5 area,ERROR,,No module named 'assignment5',ERROR,FALSE
+323063545,Assignment 5 fit,ERROR,,No module named 'assignment5',ERROR,FALSE
+322720137,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.01566124,FALSE
+322720137,Assignment 3 integrate,integrate,2,Exceeded the maximal number of invocations.,0.008116961,FALSE
+322720137,Assignment 3 integrate,integrate,3,Exceeded the maximal number of invocations.,0.009820461,FALSE
+322720137,Assignment 3 integrate,integrate,4,Exceeded the maximal number of invocations.,0.007550001,FALSE
+322720137,Assignment 3 integrate,integrate,5,Exceeded the maximal number of invocations.,0.006995201,FALSE
+322720137,Assignment 3 integrate,integrate,6,Exceeded the maximal number of invocations.,0.006970167,FALSE
+322720137,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.007227898,FALSE
+322720137,Assignment 3 integrate,integrate,8,Exceeded the maximal number of invocations.,0.00736165,FALSE
+322720137,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.0076437,FALSE
+322720137,Assignment 3 integrate,integrate,10,Exceeded the maximal number of invocations.,0.007637262,FALSE
+322720137,Assignment 3 integrate,integrate,11,Exceeded the maximal number of invocations.,0.008143902,FALSE
+322720137,Assignment 3 integrate,integrate,12,Exceeded the maximal number of invocations.,0.007718563,FALSE
+322720137,Assignment 3 integrate,integrate,13,Exceeded the maximal number of invocations.,0.008227825,FALSE
+322720137,Assignment 3 integrate,integrate,14,Exceeded the maximal number of invocations.,0.008122921,FALSE
+322720137,Assignment 3 integrate,integrate,15,Exceeded the maximal number of invocations.,0.00822711,FALSE
+322720137,Assignment 3 integrate,integrate,16,Exceeded the maximal number of invocations.,0.008332253,FALSE
+322720137,Assignment 3 integrate,integrate,17,Exceeded the maximal number of invocations.,0.00858593,FALSE
+322720137,Assignment 3 integrate,integrate,18,Exceeded the maximal number of invocations.,0.008028746,FALSE
+322720137,Assignment 3 integrate,integrate,19,Exceeded the maximal number of invocations.,0.010488033,FALSE
+212371900,Assignment 3 integrate,integrate,10,,0.010003328,FALSE
+212371900,Assignment 3 areabetween,areabetween,2,,0.00811553,FALSE
+209324755,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.018333197,FALSE
+209324755,Assignment 3 integrate,integrate,10,,0.012282372,FALSE
+207882853,Assignment 1,ERROR,,No module named 'assignment1',ERROR,FALSE
+207882853,Assignment 2,ERROR,,No module named 'assignment2',ERROR,FALSE
+207882853,Assignment 3 integrate,ERROR,,No module named 'assignment3',ERROR,FALSE
+207882853,Assignment 3 areabetween,ERROR,,No module named 'assignment3',ERROR,FALSE
+207882853,Assignment 4,ERROR,,No module named 'assignment4',ERROR,FALSE
+207882853,Assignment 5 area,ERROR,,No module named 'assignment5',ERROR,FALSE
+207882853,Assignment 5 fit,ERROR,,No module named 'assignment5',ERROR,FALSE
+326126133,Assignment 1,ERROR,,No module named 'assignment1',ERROR,FALSE
+326126133,Assignment 2,ERROR,,No module named 'assignment2',ERROR,FALSE
+326126133,Assignment 3 integrate,integrate,10,,0.028967381,FALSE
+325911337,Assignment 4,fit,4,integer division or modulo by zero,0.010392666,FALSE
+325911337,Assignment 4,fit,15,integer division or modulo by zero,0.009364128,FALSE
+209165737,Assignment 3 integrate,integrate,1,object of type 'numpy.float32' has no len(),0.014628887,FALSE
