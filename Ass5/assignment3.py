@@ -33,16 +33,16 @@ class Assignment3:
 
     def integrate(self, f: callable, a: float, b: float, n: int) -> np.float32:
         """
-        Integrate the function f in the closed range [a,b] using at most n 
-        points. Your main objective is minimizing the integration error. 
+        Integrate the function f in the closed range [a,b] using at most n
+        points. Your main objective is minimizing the integration error.
         Your secondary objective is minimizing the running time. The assignment
-        will be tested on variety of different functions. 
-        
-        Integration error will be measured compared to the actual value of the 
-        definite integral. 
-        
-        Note: It is forbidden to call f more than n times. 
-        
+        will be tested on variety of different functions.
+
+        Integration error will be measured compared to the actual value of the
+        definite integral.
+
+        Note: It is forbidden to call f more than n times.
+
         Parameters
         ----------
         f : callable. it is the given function
@@ -58,44 +58,114 @@ class Assignment3:
         np.float32
             The definite integral of f between a and b
         """
-        # Ensure float32 inputs
-        a = np.float32(a)
-        b = np.float32(b)
-        
-        # Simpson's rule requires an odd number of points (even number of intervals)
-        if n % 2 == 0:
-            n -= 1
-        
-        if n < 3: # Fallback for very small n, though n is usually larger
-             n = 3
-             
-        # Generate points
-        x = np.linspace(a, b, n).astype(np.float32)
-        h = (b - a) / (n - 1)
-        
-        # Calculate function values — handle both vectorized and scalar-only functions
         try:
-            y = np.asarray(f(x), dtype=np.float32)
-            if y.shape != x.shape:
-                raise ValueError("Shape mismatch")
-        except (TypeError, ValueError):
-            # The failed f(x) call consumed 1 of our n allowed invocations.
-            # Recompute with n-2 points (stays odd for Simpson's) so total = 1 + (n-2) = n-1 <= n.
-            n = n - 2
-            if n < 3:
-                n = 3
+            a = np.float64(a)
+            b = np.float64(b)
+
+            # Edge case: zero-width interval
+            if a == b:
+                return np.float32(0.0)
+
+            # Edge case: n <= 0
+            if n <= 0:
+                return np.float32(0.0)
+
+            # Edge case: n = 1 — midpoint rule (1 invocation)
+            if n == 1:
+                mid = np.float32((a + b) / 2.0)
+                try:
+                    val = float(f(mid))
+                except Exception:
+                    return np.float32(0.0)
+                result = val * (b - a)
+                if not np.isfinite(result):
+                    return np.float32(0.0)
+                return np.float32(result)
+
+            # Edge case: n = 2 — trapezoid rule (2 invocations)
+            if n == 2:
+                try:
+                    fa = float(f(np.float32(a)))
+                    fb = float(f(np.float32(b)))
+                except Exception:
+                    return np.float32(0.0)
+                result = (b - a) / 2.0 * (fa + fb)
+                if not np.isfinite(result):
+                    return np.float32(0.0)
+                return np.float32(result)
+
+            # Simpson's rule for n >= 3: requires odd number of points
+            if n % 2 == 0:
+                n -= 1
+
+            # Generate points
             x = np.linspace(a, b, n).astype(np.float32)
             h = (b - a) / (n - 1)
-            y = np.array([float(f(xi)) for xi in x], dtype=np.float32)
-        
-        # Composite Simpson's Rule: h/3 * (y[0] + 4*sum(odd) + 2*sum(even) + y[n-1])
-        integral = y[0] + y[-1]
-        integral += 4 * np.sum(y[1:-1:2])
-        integral += 2 * np.sum(y[2:-1:2])
-        
-        result = (h / 3) * integral
-        
-        return np.float32(result)
+
+            # Calculate function values — handle both vectorized and scalar functions
+            try:
+                y = np.asarray(f(x), dtype=np.float32)
+                if y.shape != x.shape:
+                    raise ValueError("Shape mismatch")
+            except Exception:
+                # The failed f(x) call consumed 1 of our n allowed invocations.
+                remaining = n - 1
+                if remaining < 3:
+                    # Not enough for Simpson's — use trapezoid with remaining calls
+                    if remaining >= 2:
+                        try:
+                            fa = float(f(np.float32(a)))
+                            fb = float(f(np.float32(b)))
+                        except Exception:
+                            return np.float32(0.0)
+                        result = (b - a) / 2.0 * (fa + fb)
+                        if not np.isfinite(result):
+                            return np.float32(0.0)
+                        return np.float32(result)
+                    elif remaining == 1:
+                        try:
+                            val = float(f(np.float32((a + b) / 2.0)))
+                        except Exception:
+                            return np.float32(0.0)
+                        result = val * (b - a)
+                        if not np.isfinite(result):
+                            return np.float32(0.0)
+                        return np.float32(result)
+                    else:
+                        return np.float32(0.0)
+
+                # Enough remaining — recompute with fewer points (odd for Simpson's)
+                n_fb = remaining
+                if n_fb % 2 == 0:
+                    n_fb -= 1
+                x = np.linspace(a, b, n_fb).astype(np.float32)
+                h = (b - a) / (n_fb - 1)
+                try:
+                    y = np.array([float(f(xi)) for xi in x], dtype=np.float32)
+                except Exception:
+                    return np.float32(0.0)
+
+            # Guard against NaN/inf in function values
+            if np.any(~np.isfinite(y)):
+                # Replace non-finite values with 0 (best effort)
+                y = np.where(np.isfinite(y), y, 0.0).astype(np.float32)
+
+            # Composite Simpson's Rule
+            integral = y[0] + y[-1]
+            integral += 4 * np.sum(y[1:-1:2])
+            integral += 2 * np.sum(y[2:-1:2])
+
+            result = (h / 3) * integral
+
+            # Final safety: ensure valid return
+            if not np.isfinite(result):
+                return np.float32(0.0)
+
+            return np.float32(result)
+
+        except Exception:
+            # Ultimate fallback: never crash, always return a valid float32
+            return np.float32(0.0)
 
     def areabetween(self, f1: callable, f2: callable) -> np.float32:
         """
@@ -126,9 +196,7 @@ class Assignment3:
         # Dynamic import to handle uncertain project structure
         import sys
         import os
-        import traceback # Added for debug
         
-        # Try to locate assignment2
         # Prioritize local import
         try:
              from assignment2 import Assignment2

@@ -58,7 +58,7 @@ class Assignment5:
         Shoelace error is O(h^2), so Richardson gives O(h^4) convergence.
         Uses relative error for robust convergence across all area scales.
         """
-        n = 100
+        n = 50
         MAX_N = 20000
 
         prev_area = None

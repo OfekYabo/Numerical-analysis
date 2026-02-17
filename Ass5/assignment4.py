@@ -158,7 +158,6 @@ class Assignment4:
 
 import unittest
 from sampleFunctions import *
-# from tqdm import tqdm
 
 
 class TestAssignment4(unittest.TestCase):
@@ -192,7 +191,6 @@ class TestAssignment4(unittest.TestCase):
             self.assertNotEquals(f(x), nf(x))
             mse+= (f(x)-ff(x))**2
         mse = mse/1000
-        print(mse)
 
         
         

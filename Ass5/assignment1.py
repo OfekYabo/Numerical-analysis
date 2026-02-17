@@ -207,7 +207,6 @@ class Assignment1:
 
 import unittest
 from functionUtils import *
-# from tqdm import tqdm
 
 
 class TestAssignment1(unittest.TestCase):
@@ -238,8 +237,6 @@ class TestAssignment1(unittest.TestCase):
         mean_err = mean_err / 100
 
         T = time.time() - T
-        print(T)
-        print(mean_err)
 
     def test_with_poly_restrict(self):
         ass1 = Assignment1()

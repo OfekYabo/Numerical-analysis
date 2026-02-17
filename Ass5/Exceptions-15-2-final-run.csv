@@ -1,0 +1,280 @@
+StudentID,assignemtn,function,execnum,error,time,GRADEABLE
+208487850,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.007121801,FALSE
+208487850,Assignment 3 integrate,integrate,1,object of type 'numpy.float32' has no len(),0.01002717,FALSE
+208487850,Assignment 3 integrate,integrate,10,,0.006123781,FALSE
+213919947,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.007162809,FALSE
+213919947,Assignment 3 areabetween,areabetween,10,,0.009935379,FALSE
+324265016,Assignment 1,ERROR,,No module named 'assignment1',ERROR,FALSE
+324265016,Assignment 2,ERROR,,No module named 'assignment2',ERROR,FALSE
+324265016,Assignment 3 integrate,ERROR,,No module named 'assignment3',ERROR,FALSE
+324265016,Assignment 3 areabetween,ERROR,,No module named 'assignment3',ERROR,FALSE
+324265016,Assignment 4,ERROR,,No module named 'assignment4',ERROR,FALSE
+324265016,Assignment 5 area,ERROR,,No module named 'assignment5',ERROR,FALSE
+324265016,Assignment 5 fit,ERROR,,No module named 'assignment5',ERROR,FALSE
+215093147,Assignment 3 integrate,integrate,1,Exceeded the maximal number of invocations.,0.009959459,FALSE
+215093147,Assignment 3 integrate,integrate,2,Exceeded the maximal number of invocations.,0.01012063,FALSE
+215093147,Assignment 3 integrate,integrate,4,Exceeded the maximal number of invocations.,0.007813931,FALSE
+215093147,Assignment 3 integrate,integrate,5,Exceeded the maximal number of invocations.,0.009838581,FALSE
+215093147,Assignment 3 integrate,integrate,10,,0.010579109,FALSE
+215093147,Assignment 3 areabetween,areabetween,1,math domain error,0.007163286,FALSE
+215093147,Assignment 3 areabetween,areabetween,2,math domain error,0.007982254,FALSE
+215093147,Assignment 3 areabetween,areabetween,3,math domain error,0.01132822,FALSE
+215093147,Assignment 3 areabetween,areabetween,8,math domain error,0.009789705,FALSE
+328606975,Assignment 3 integrate,integrate,10,,0.00923419,FALSE
+325305043,Assignment 3 integrate,integrate,10,,0.008211136,FALSE
+325305043,Assignment 5 area,ERROR,,No module named 'assignment5',ERROR,FALSE
+325305043,Assignment 5 fit,ERROR,,No module named 'assignment5',ERROR,FALSE
+324829225,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.017683744,FALSE
+324829225,Assignment 3 integrate,integrate,8,Exceeded the maximal number of invocations.,0.013132811,FALSE
+324829225,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.015789032,FALSE
+324829225,Assignment 3 integrate,integrate,10,,0.017865181,FALSE
+209433788,Assignment 3 integrate,integrate,1,object of type 'numpy.float32' has no len(),0.009813309,FALSE
+209433788,Assignment 5 area,area,1,'numpy.float64' object cannot be interpreted as an integer,0.009405375,FALSE
+209433788,Assignment 5 area,area,2,'numpy.float64' object cannot be interpreted as an integer,0.008741379,FALSE
+209433788,Assignment 5 area,area,3,'numpy.float64' object cannot be interpreted as an integer,0.007782698,FALSE
+209433788,Assignment 5 area,area,4,'numpy.float64' object cannot be interpreted as an integer,0.007731438,FALSE
+209433788,Assignment 5 area,area,5,'numpy.float64' object cannot be interpreted as an integer,0.007083178,FALSE
+209433788,Assignment 5 area,area,6,'numpy.float64' object cannot be interpreted as an integer,0.007118464,FALSE
+209433788,Assignment 5 area,area,7,'numpy.float64' object cannot be interpreted as an integer,0.006740093,FALSE
+209433788,Assignment 5 area,area,8,'numpy.float64' object cannot be interpreted as an integer,0.006683826,FALSE
+209433788,Assignment 5 area,area,9,'numpy.float64' object cannot be interpreted as an integer,0.006510973,FALSE
+209433788,Assignment 5 area,area,10,'numpy.float64' object cannot be interpreted as an integer,0.006636143,FALSE
+209433788,Assignment 5 area,area,11,'numpy.float64' object cannot be interpreted as an integer,0.006999969,FALSE
+209433788,Assignment 5 area,area,12,'numpy.float64' object cannot be interpreted as an integer,0.006440639,FALSE
+209433788,Assignment 5 fit,fit_shape,1,,0.02164197,FALSE
+209433788,Assignment 5 fit,fit_shape,2,,0.021189451,FALSE
+209433788,Assignment 5 fit,fit_shape,3,,0.021158934,FALSE
+209433788,Assignment 5 fit,fit_shape,4,,0.021020889,FALSE
+209433788,Assignment 5 fit,fit_shape,5,,0.021175385,FALSE
+209433788,Assignment 5 fit,fit_shape,6,,0.034397602,FALSE
+209433788,Assignment 5 fit,fit_shape,7,,0.03205514,FALSE
+209433788,Assignment 5 fit,fit_shape,8,,0.026502371,FALSE
+209433788,Assignment 5 fit,fit_shape,9,,0.020676851,FALSE
+209433788,Assignment 5 fit,fit_shape,10,,0.020497561,FALSE
+209433788,Assignment 5 fit,fit_shape,11,,0.031382322,FALSE
+209433788,Assignment 5 fit,fit_shape,12,,0.032405853,FALSE
+209165737,Assignment 3 integrate,integrate,1,object of type 'numpy.float32' has no len(),0.011501074,FALSE
+212055560,Assignment 3 areabetween,areabetween,2,,0.041315556,FALSE
+318939899,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.039142847,FALSE
+318939899,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.009191513,FALSE
+207352170,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.01141715,FALSE
+207352170,Assignment 3 integrate,integrate,1,object of type 'numpy.float32' has no len(),0.01243186,FALSE
+207352170,Assignment 3 areabetween,areabetween,1,Assignment2.intersections() missing 1 required positional argument: 'b',0.006047487,FALSE
+207352170,Assignment 3 areabetween,areabetween,2,Assignment2.intersections() missing 1 required positional argument: 'b',0.006004095,FALSE
+207352170,Assignment 3 areabetween,areabetween,3,Assignment2.intersections() missing 1 required positional argument: 'b',0.007008791,FALSE
+207352170,Assignment 3 areabetween,areabetween,4,Assignment2.intersections() missing 1 required positional argument: 'b',0.007112265,FALSE
+207352170,Assignment 3 areabetween,areabetween,5,Assignment2.intersections() missing 1 required positional argument: 'b',0.006545782,FALSE
+207352170,Assignment 3 areabetween,areabetween,6,Assignment2.intersections() missing 1 required positional argument: 'b',0.006225586,FALSE
+207352170,Assignment 3 areabetween,areabetween,7,Assignment2.intersections() missing 1 required positional argument: 'b',0.006527185,FALSE
+207352170,Assignment 3 areabetween,areabetween,8,Assignment2.intersections() missing 1 required positional argument: 'b',0.007025719,FALSE
+207352170,Assignment 3 areabetween,areabetween,9,Assignment2.intersections() missing 1 required positional argument: 'b',0.007390022,FALSE
+207352170,Assignment 3 areabetween,areabetween,10,Assignment2.intersections() missing 1 required positional argument: 'b',0.006669044,FALSE
+207352170,Assignment 3 areabetween,areabetween,11,Assignment2.intersections() missing 1 required positional argument: 'b',0.0074718,FALSE
+207352170,Assignment 3 areabetween,areabetween,12,Assignment2.intersections() missing 1 required positional argument: 'b',0.006890774,FALSE
+207352170,Assignment 3 areabetween,areabetween,13,Assignment2.intersections() missing 1 required positional argument: 'b',0.007504702,FALSE
+207352170,Assignment 3 areabetween,areabetween,14,Assignment2.intersections() missing 1 required positional argument: 'b',0.006941795,FALSE
+208278986,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.007808208,FALSE
+313324568,Assignment 3 integrate,ERROR,,cannot import name 'assignment2' from 'assignment2' (/content/drive/Shareddrives/NumericalAnalysis/FinalTask/2026/data_full/אושר ברזילי_12998573_assignsubmission_file/assignment2.py),ERROR,FALSE
+313324568,Assignment 3 areabetween,ERROR,,cannot import name 'assignment2' from 'assignment2' (/content/drive/Shareddrives/NumericalAnalysis/FinalTask/2026/data_full/אושר ברזילי_12998573_assignsubmission_file/assignment2.py),ERROR,FALSE
+318945227,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.035810947,FALSE
+318945227,Assignment 3 integrate,integrate,10,,0.0122509,FALSE
+326639838,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.016211033,FALSE
+326639838,Assignment 3 integrate,integrate,10,,0.010659933,FALSE
+209728559,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.01304841,FALSE
+209675552,Assignment 1,interpolate,12,,0.131872892,FALSE
+209675552,Assignment 1,interpolate,33,,0.215743303,FALSE
+209675552,Assignment 1,interpolate,34,,0.207324028,FALSE
+209675552,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.006525517,FALSE
+209675552,Assignment 3 integrate,integrate,10,,0.006584883,FALSE
+213376353,Assignment 3 integrate,integrate,7,only length-1 arrays can be converted to Python scalars,0.006597519,FALSE
+213376353,Assignment 3 integrate,integrate,9,only length-1 arrays can be converted to Python scalars,0.00684762,FALSE
+213376353,Assignment 3 integrate,integrate,10,,0.006860733,FALSE
+213376353,Assignment 3 areabetween,areabetween,1,only length-1 arrays can be converted to Python scalars,0.007021427,FALSE
+213376353,Assignment 3 areabetween,areabetween,2,only length-1 arrays can be converted to Python scalars,0.007042885,FALSE
+213376353,Assignment 3 areabetween,areabetween,3,only length-1 arrays can be converted to Python scalars,0.00748539,FALSE
+213376353,Assignment 3 areabetween,areabetween,8,only length-1 arrays can be converted to Python scalars,0.00770998,FALSE
+209288588,Assignment 3 integrate,integrate,10,,0.012457848,FALSE
+206438509,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.015254259,FALSE
+209324755,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.019738674,FALSE
+212434369,Assignment 3 integrate,integrate,10,,0.010164261,FALSE
+215670407,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.044657946,FALSE
+215670407,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.038270473,FALSE
+322720137,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.008528948,FALSE
+212371900,Assignment 3 integrate,integrate,1,Exceeded the maximal number of invocations.,0.009711742,FALSE
+212371900,Assignment 3 areabetween,areabetween,2,,0.008258104,FALSE
+325678423,Assignment 1,interpolate,13,,0.454813957,FALSE
+325678423,Assignment 1,interpolate,14,,0.534051418,FALSE
+325678423,Assignment 1,interpolate,15,,0.623561144,FALSE
+325678423,Assignment 1,interpolate,16,,0.717948675,FALSE
+325678423,Assignment 1,interpolate,17,,0.843891382,FALSE
+325678423,Assignment 1,interpolate,18,,0.969094992,FALSE
+325678423,Assignment 1,interpolate,19,,1.107489824,FALSE
+325678423,Assignment 1,interpolate,20,,1.257712126,FALSE
+325678423,Assignment 1,interpolate,21,,1.43829751,FALSE
+325678423,Assignment 1,interpolate,22,,1.67696476,FALSE
+325678423,Assignment 1,interpolate,23,,3.339651585,FALSE
+325678423,Assignment 1,interpolate,24,,2.222044468,FALSE
+325678423,Assignment 1,interpolate,25,,2.095786572,FALSE
+325678423,Assignment 1,interpolate,26,,2.318253279,FALSE
+325678423,Assignment 1,interpolate,27,,2.529974222,FALSE
+325678423,Assignment 1,interpolate,28,,3.899063826,FALSE
+325678423,Assignment 1,interpolate,29,,3.796721458,FALSE
+325678423,Assignment 1,interpolate,30,,3.222234964,FALSE
+325678423,Assignment 1,interpolate,31,,3.441723108,FALSE
+325678423,Assignment 1,interpolate,32,,5.692420721,FALSE
+325678423,Assignment 1,interpolate,33,,4.004803419,FALSE
+325678423,Assignment 1,interpolate,34,,3.999326468,FALSE
+325678423,Assignment 1,interpolate,35,,6.241847992,FALSE
+325678423,Assignment 1,interpolate,36,,4.56165123,FALSE
+325678423,Assignment 1,interpolate,37,,4.844842672,FALSE
+325678423,Assignment 1,interpolate,38,,7.162584782,FALSE
+325678423,Assignment 1,interpolate,39,,5.488687515,FALSE
+325678423,Assignment 1,interpolate,40,,7.76333499,FALSE
+325678423,Assignment 1,interpolate,41,,6.148115635,FALSE
+325678423,Assignment 1,interpolate,42,,8.417662621,FALSE
+325678423,Assignment 1,interpolate,43,,6.80811286,FALSE
+325678423,Assignment 1,interpolate,44,,9.110905886,FALSE
+325678423,Assignment 1,interpolate,45,,9.136211634,FALSE
+325678423,Assignment 1,interpolate,46,,8.325982332,FALSE
+325524320,Assignment 1,interpolate,13,,0.925366402,FALSE
+325524320,Assignment 1,interpolate,14,,1.105547667,FALSE
+325524320,Assignment 1,interpolate,15,,1.300974846,FALSE
+325524320,Assignment 1,interpolate,16,,1.565746069,FALSE
+325524320,Assignment 1,interpolate,17,,1.772036314,FALSE
+325524320,Assignment 1,interpolate,18,,2.068391085,FALSE
+325524320,Assignment 1,interpolate,19,,3.622078896,FALSE
+325524320,Assignment 1,interpolate,20,,3.377844334,FALSE
+325524320,Assignment 1,interpolate,21,,3.023111105,FALSE
+325524320,Assignment 1,interpolate,22,,3.42717433,FALSE
+325524320,Assignment 1,interpolate,23,,5.572170019,FALSE
+325524320,Assignment 1,interpolate,24,,4.328459501,FALSE
+325524320,Assignment 1,interpolate,25,,4.603985071,FALSE
+325524320,Assignment 1,interpolate,26,,6.962086439,FALSE
+325524320,Assignment 1,interpolate,27,,5.529698849,FALSE
+325524320,Assignment 1,interpolate,28,,7.916488647,FALSE
+325524320,Assignment 1,interpolate,29,,6.519421339,FALSE
+325524320,Assignment 1,interpolate,30,,8.92573595,FALSE
+325524320,Assignment 1,interpolate,31,,7.457455873,FALSE
+325524320,Assignment 1,interpolate,32,,9.987044096,FALSE
+325524320,Assignment 1,interpolate,33,,10.64046931,FALSE
+325524320,Assignment 1,interpolate,34,,8.930467367,FALSE
+325524320,Assignment 1,interpolate,35,,10.93012619,FALSE
+325524320,Assignment 1,interpolate,36,,11.82420778,FALSE
+325524320,Assignment 1,interpolate,37,,12.44487429,FALSE
+325524320,Assignment 1,interpolate,38,,13.20481968,FALSE
+325524320,Assignment 1,interpolate,39,,13.83892345,FALSE
+325524320,Assignment 1,interpolate,40,,14.54968691,FALSE
+325524320,Assignment 1,interpolate,41,,15.18997717,FALSE
+325524320,Assignment 1,interpolate,42,,15.93338561,FALSE
+325524320,Assignment 1,interpolate,43,,16.65994787,FALSE
+325524320,Assignment 1,interpolate,44,,18.35226917,FALSE
+325524320,Assignment 1,interpolate,45,,19.24999404,FALSE
+325524320,Assignment 1,interpolate,46,,19.07382226,FALSE
+207195868,Assignment 3 integrate,integrate,10,,0.011694908,FALSE
+211897582,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.008399725,FALSE
+211897582,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.007466078,FALSE
+211897582,Assignment 5 area,ERROR,,"unterminated triple-quoted string literal (detected at line 209) (assignment5.py, line 117)",ERROR,FALSE
+211897582,Assignment 5 fit,ERROR,,"unterminated triple-quoted string literal (detected at line 209) (assignment5.py, line 117)",ERROR,FALSE
+324301266,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.006401062,FALSE
+324301266,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.006946802,FALSE
+326126133,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.017884016,FALSE
+312261167,Assignment 3 areabetween,areabetween,4,,0.010867596,FALSE
+211894852,Assignment 3 integrate,integrate,10,,0.007414579,FALSE
+342728409,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.010300875,FALSE
+212133763,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.007316113,FALSE
+212133763,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.007618189,FALSE
+212133763,Assignment 3 areabetween,areabetween,4,running took more then 10 seconds,10.01097226,FALSE
+212133763,Assignment 3 areabetween,areabetween,7,running took more then 10 seconds,10.00575709,FALSE
+212133763,Assignment 3 areabetween,areabetween,10,running took more then 10 seconds,10.00533509,FALSE
+212133763,Assignment 3 areabetween,areabetween,12,running took more then 10 seconds,10.01100302,FALSE
+212133763,Assignment 3 areabetween,areabetween,14,running took more then 10 seconds,10.00592518,FALSE
+315233676,Assignment 3 integrate,integrate,10,,0.012135983,FALSE
+315233676,Assignment 3 areabetween,areabetween,4,,1.405741453,FALSE
+315233676,Assignment 3 areabetween,areabetween,6,,0.690979004,FALSE
+315233676,Assignment 3 areabetween,areabetween,8,,1.239895821,FALSE
+315233676,Assignment 3 areabetween,areabetween,12,,0.707239151,FALSE
+324275379,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.007969379,FALSE
+324275379,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.00820303,FALSE
+318199585,Assignment 3 integrate,integrate,10,,0.010246277,FALSE
+216025874,Assignment 3 integrate,integrate,10,,0.011035204,FALSE
+209200559,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.006134748,FALSE
+212358212,Assignment 3 integrate,integrate,10,,0.00641346,FALSE
+211880364,Assignment 3 integrate,integrate,1,object of type 'numpy.float32' has no len(),0.00912261,FALSE
+211880364,Assignment 3 integrate,integrate,7,problem with assigning y values,0.006608009,FALSE
+211880364,Assignment 3 integrate,integrate,9,problem with assigning y values,0.006598473,FALSE
+211880364,Assignment 3 integrate,integrate,10,,0.008554697,FALSE
+325908598,Assignment 3 integrate,integrate,10,,0.010881662,FALSE
+325908598,Assignment 5 fit,fit_shape,1,,0.172725916,FALSE
+325908598,Assignment 5 fit,fit_shape,2,,0.146180391,FALSE
+325908598,Assignment 5 fit,fit_shape,3,,0.168114901,FALSE
+325908598,Assignment 5 fit,fit_shape,4,,0.15272665,FALSE
+325908598,Assignment 5 fit,fit_shape,5,,0.144147158,FALSE
+325908598,Assignment 5 fit,fit_shape,6,,0.249944687,FALSE
+325908598,Assignment 5 fit,fit_shape,7,,0.286705017,FALSE
+325908598,Assignment 5 fit,fit_shape,8,,0.160563469,FALSE
+325908598,Assignment 5 fit,fit_shape,9,,0.141917706,FALSE
+325908598,Assignment 5 fit,fit_shape,10,,0.144513369,FALSE
+325908598,Assignment 5 fit,fit_shape,11,,0.254606485,FALSE
+325908598,Assignment 5 fit,fit_shape,12,,0.252335072,FALSE
+313351439,Assignment 3 integrate,integrate,10,,0.0159657,FALSE
+205967789,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.016339779,FALSE
+205967789,Assignment 5 fit,fit_shape,1,,0.039313793,FALSE
+205967789,Assignment 5 fit,fit_shape,2,,0.048915863,FALSE
+205967789,Assignment 5 fit,fit_shape,3,,0.048261642,FALSE
+205967789,Assignment 5 fit,fit_shape,4,,0.047672272,FALSE
+205967789,Assignment 5 fit,fit_shape,5,,0.049271107,FALSE
+205967789,Assignment 5 fit,fit_shape,6,,0.066558838,FALSE
+205967789,Assignment 5 fit,fit_shape,7,,0.065587997,FALSE
+205967789,Assignment 5 fit,fit_shape,8,,0.049375534,FALSE
+205967789,Assignment 5 fit,fit_shape,9,,0.052891731,FALSE
+205967789,Assignment 5 fit,fit_shape,10,,0.054673433,FALSE
+205967789,Assignment 5 fit,fit_shape,11,,0.065869093,FALSE
+205967789,Assignment 5 fit,fit_shape,12,,0.068242788,FALSE
+325559441,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.006657124,FALSE
+325559441,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.008031845,FALSE
+325559441,Assignment 3 areabetween,areabetween,2,,0.056414604,FALSE
+325559441,Assignment 3 areabetween,areabetween,4,,0.174868822,FALSE
+325559441,Assignment 3 areabetween,areabetween,5,,0.119464636,FALSE
+325559441,Assignment 3 areabetween,areabetween,6,,0.135375738,FALSE
+325559441,Assignment 3 areabetween,areabetween,7,,0.172582626,FALSE
+325559441,Assignment 3 areabetween,areabetween,8,,0.31454587,FALSE
+325559441,Assignment 3 areabetween,areabetween,9,,0.288277626,FALSE
+325559441,Assignment 3 areabetween,areabetween,10,,0.237468243,FALSE
+325559441,Assignment 3 areabetween,areabetween,11,,0.180199146,FALSE
+325559441,Assignment 3 areabetween,areabetween,12,,0.261287451,FALSE
+325559441,Assignment 3 areabetween,areabetween,14,,0.329510927,FALSE
+325559441,Assignment 5 area,ERROR,,No module named 'assignment5',ERROR,FALSE
+325559441,Assignment 5 fit,ERROR,,No module named 'assignment5',ERROR,FALSE
+206941114,Assignment 3 integrate,integrate,10,,0.009240389,FALSE
+206941114,Assignment 3 areabetween,areabetween,4,,0.034879923,FALSE
+206941114,Assignment 3 areabetween,areabetween,5,,0.02836895,FALSE
+206941114,Assignment 3 areabetween,areabetween,6,,0.029782534,FALSE
+206941114,Assignment 3 areabetween,areabetween,7,,0.030465841,FALSE
+206941114,Assignment 3 areabetween,areabetween,8,,0.034805775,FALSE
+206941114,Assignment 3 areabetween,areabetween,12,,0.031377077,FALSE
+206941114,Assignment 3 areabetween,areabetween,14,,0.034774303,FALSE
+208187757,Assignment 3 integrate,integrate,1,object of type 'numpy.float32' has no len(),0.010564089,FALSE
+208187757,Assignment 3 integrate,integrate,10,,0.006407738,FALSE
+207244021,Assignment 3 integrate,integrate,10,,0.009919882,FALSE
+209222215,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.005382061,FALSE
+209222215,Assignment 3 integrate,integrate,10,,0.012185097,FALSE
+211774351,Assignment 3 integrate,integrate,1,object of type 'numpy.float32' has no len(),0.010558844,FALSE
+211774351,Assignment 3 integrate,integrate,10,,0.006729603,FALSE
+211805049,Assignment 3 integrate,integrate,10,,0.010493994,FALSE
+319047023,Assignment 2,intersections,16,attempt to get argmin of an empty sequence,0.013905525,FALSE
+211965371,Assignment 3 integrate,integrate,10,,0.011408806,FALSE
+208230235,Assignment 1,ERROR,,No module named 'assignment1',ERROR,FALSE
+208230235,Assignment 2,ERROR,,No module named 'assignment2',ERROR,FALSE
+208230235,Assignment 3 integrate,ERROR,,No module named 'assignment3',ERROR,FALSE
+208230235,Assignment 3 areabetween,ERROR,,No module named 'assignment3',ERROR,FALSE
+208230235,Assignment 4,ERROR,,No module named 'assignment4',ERROR,FALSE
+208230235,Assignment 5 area,ERROR,,No module named 'assignment5',ERROR,FALSE
+208230235,Assignment 5 fit,ERROR,,No module named 'assignment5',ERROR,FALSE
+208004689,Assignment 3 integrate,integrate,7,Exceeded the maximal number of invocations.,0.00082016,FALSE
+208004689,Assignment 3 integrate,integrate,9,Exceeded the maximal number of invocations.,0.000274897,FALSE
+326364007,Assignment 3 integrate,integrate,10,,0.011910915,FALSE
+212134241,Assignment 3 integrate,integrate,1,object of type 'numpy.float32' has no len(),0.021906853,FALSE
+212134241,Assignment 3 integrate,integrate,10,,0.013231754,FALSE
+212134241,Assignment 3 areabetween,areabetween,2,,0.019501686,FALSE
+326493889,Assignment 3 integrate,integrate,10,,0.007736444,FALSE
+211669718,Assignment 3 integrate,integrate,10,,0.025333405,FALSE
