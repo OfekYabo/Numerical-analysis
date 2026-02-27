@@ -65,6 +65,11 @@ class Assignment3:
             # Edge case: zero-width interval
             if a == b:
                 return np.float32(0.0)
+             
+            # Edge case: reversed bounds
+            if a > b:
+                result = self.integrate(f, b, a, n)
+                return np.float32(-result)
 
             # Edge case: n <= 0
             if n <= 0:
